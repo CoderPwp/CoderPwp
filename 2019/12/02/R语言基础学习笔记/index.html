@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>R语言基础学习笔记 | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="R语言,机器学习和人工智能学习基础,中国慕课大学">
+    <meta name="description" content="课程来源于中国大学慕课，《机器学习和人工智能》浙江大学 张朋。">
+<meta name="keywords" content="R语言,机器学习和人工智能学习基础,中国慕课大学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R语言基础学习笔记">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;12&#x2F;02&#x2F;R%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="课程来源于中国大学慕课，《机器学习和人工智能》浙江大学 张朋。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-02T06:44:47.133Z">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">R语言基础学习笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">R语言基础学习笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-02T05:45:58.000Z" itemprop="datePublished" class="page-time">
+  2019-12-02
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#部分1"><span class="post-toc-number">1.</span> <span class="post-toc-text">部分1</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#部分2"><span class="post-toc-number">2.</span> <span class="post-toc-text">部分2</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#部分3"><span class="post-toc-number">3.</span> <span class="post-toc-text">部分3</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#部分4"><span class="post-toc-number">4.</span> <span class="post-toc-text">部分4</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-R语言基础学习笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">R语言基础学习笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-02 13:45:58" datetime="2019-12-02T05:45:58.000Z"  itemprop="datePublished">2019-12-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>课程来源于中国大学慕课，《机器学习和人工智能》浙江大学 张朋。</strong><a id="more"></a></p>
+<h1 id="部分1"><a href="#部分1" class="headerlink" title="部分1"></a>部分1</h1><p><strong>The c() function can be used to create vectors of objects, c()函数用来创建新的对象<br>这里的c指的是create创建</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">X&lt;-8+7</span><br><span class="line">X</span><br><span class="line">a &lt;- c(1.8, 4.5) #数值</span><br><span class="line">b &lt;- c(1+2i, 2-6i) #复数</span><br><span class="line">d &lt;- c(23, 44) #整数</span><br><span class="line">e &lt;- vector(&quot;logical&quot;, length = 5) #逻辑性长度为5的空向量</span><br><span class="line">ab &lt;- c(TRUE,24) #数值 TRUE强制转换成数值1</span><br><span class="line">cd &lt;-c (2.5, &quot;May&quot;) #这里的2.5转换成了字符型&quot;2.5&quot;</span><br><span class="line">class(qt) #检查任何对象的类型用class()函数</span><br><span class="line">bar &lt;- 0:5</span><br><span class="line">class(bar) #整数类型的对象</span><br><span class="line">as.numeric(bar)</span><br><span class="line">class(bar)</span><br><span class="line">as.character(bar)</span><br><span class="line">class(as.character(bar))</span><br></pre></td></tr></table></figure>
+<h1 id="部分2"><a href="#部分2" class="headerlink" title="部分2"></a>部分2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">my_list &lt;- list(22,&quot;ab&quot;,TRUE, 1+2i)</span><br><span class="line">my_list</span><br><span class="line">my_list[[3]] #用双括号调用第三个元素</span><br><span class="line">my_list[3] #用单括号调用的是第三个列表</span><br><span class="line"></span><br><span class="line">my_matrix &lt;- matrix(1:6, nrow=3, ncol=2) #创建一个3行2列的矩阵</span><br><span class="line">my_matrix #按列的顺序来填充数值</span><br><span class="line">dim(my_matrix) #dimension输出对象my_matrix的维度属性</span><br><span class="line">attributes(my_matrix)$dim #这个效果同上</span><br><span class="line"></span><br><span class="line">#因为维度输出的是n行n列,所以,号空着表示全部行或列</span><br><span class="line">my_matrix[,1] #提取第一列</span><br><span class="line">my_matrix[,2] #提取第二列</span><br><span class="line">my_matrix[1,] #提取第一行</span><br><span class="line">my_matrix[2,] #提取第二行</span><br><span class="line">my_matrix[3,] #提取第三行</span><br><span class="line">x&lt;-c(1,2,3,4,5,6)</span><br><span class="line">y&lt;-c(20,30,40,50,60,70)</span><br><span class="line">cbind(x,y) #注意这里对象数值连接的顺序的从列开始逐行填充的</span><br></pre></td></tr></table></figure>
+<h1 id="部分3"><a href="#部分3" class="headerlink" title="部分3"></a>部分3</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#矩阵在列表中只能存储相同的数据类型，而数据框的应用更广泛，可以存储不同类型的的值</span><br><span class="line"></span><br><span class="line">df&lt;-data.frame(name = c(&quot;jess&quot;,&quot;jane&quot;,&quot;paul&quot;,&quot;mark&quot;), score = c(67, 56, 87, 91))</span><br><span class="line">df</span><br><span class="line">str(df) #看数据框里的内部结构</span><br><span class="line">nrow(df) #多少行</span><br><span class="line">ncol(df) #多少列</span><br><span class="line">df[1:2,2] &lt;- NA #</span><br><span class="line">df[4,2] &lt;- NA</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">NA：缺失数据</span><br><span class="line">NaN：无意义的数，比如sqrt(-2)， 0/0。</span><br><span class="line">Inf：正无穷大</span><br><span class="line">-Inf：负无穷大</span><br><span class="line">NULL：不存在</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">is.na(df) #查看数据框中哪些元素存在缺失数据</span><br><span class="line">table(is.na(df)) #返回逻辑值的列表，查看列表中缺失情况</span><br><span class="line">df[!complete.cases(df),] #返回具有缺失值的所在行的数据框</span><br><span class="line">mean(df$score,na.rm=T) #移除所有缺失值，只输出剩余score数据</span><br></pre></td></tr></table></figure>
+<h1 id="部分4"><a href="#部分4" class="headerlink" title="部分4"></a>部分4</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#初始化一个变量</span><br><span class="line">N &lt;- 10</span><br><span class="line"></span><br><span class="line">#检查是否这个变量*5大于40，这里要住于if&#123;&#125;else&#123;&#125;的格式</span><br><span class="line">if(N*5&gt;40)</span><br><span class="line">&#123;</span><br><span class="line">  print(&quot;This is easy&quot;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  print(&quot;It&apos;s not easy&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#初始化一个向量</span><br><span class="line">y&lt;-c(99, 45, 34, 65, 76, 23)</span><br><span class="line"></span><br><span class="line">#显示这个向量的前4个元素</span><br><span class="line">for(i in 1:4) &#123; print(y[i])&#125;</span><br><span class="line"></span><br><span class="line">Age &lt;- 12</span><br><span class="line">#检测是否年龄小于17</span><br><span class="line">while(Age&lt;17)&#123;</span><br><span class="line">print(Age)</span><br><span class="line">Age &lt;- Age+1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#mean的名词意思是平均值，sd标准差（Standard Deviation） ，中文环境中又常称均方差</span><br><span class="line"></span><br><span class="line">mean.and.sd &lt;- function(x)&#123;</span><br><span class="line">  av &lt;- mean(x) #mean()是R语言的基本函数</span><br><span class="line">  sdev &lt;- sd(x) #sd()也是R语言的基本函数</span><br><span class="line">  c(mean=av, SD=sdev)</span><br><span class="line">&#125;</span><br><span class="line">distance &lt;- c(148, 182, 173, 166, 109, 141, 166)</span><br><span class="line">mean.and.sd(distance)</span><br><span class="line"></span><br><span class="line">#更一般的是返回一个结果列表方便直接调用</span><br><span class="line">mean.and.sd &lt;- function(x = rnorm(10))&#123; #rnormn产生n个服从正态分布随机数</span><br><span class="line">  av &lt;- mean(x)</span><br><span class="line">  sdev &lt;- sd(x)</span><br><span class="line">  return(list(mean=av,SD=sdev))</span><br><span class="line">&#125;</span><br><span class="line">mean.and.sd()</span><br></pre></td></tr></table></figure>
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-02T06:44:47.133Z" itemprop="dateUpdated">2019-12-02 14:44:47</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R%E8%AF%AD%E8%A8%80/" rel="tag">R语言</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AD%E5%9B%BD%E6%85%95%E8%AF%BE%E5%A4%A7%E5%AD%A6/" rel="tag">中国慕课大学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" rel="tag">机器学习和人工智能学习基础</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/03/OpenCV3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%83%8F%E4%BC%AA%E7%B4%A0%E6%8F%8F/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">OpenCV3实现图像伪素描</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/23/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%AE%BA%E8%80%83%E5%8D%B7/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">数据科学与大数据技术导论考卷</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

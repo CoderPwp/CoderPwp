@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>宝塔面板搭建Flarum社区の简单教程 | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="宝塔面板,Flarum,搭建教程">
+    <meta name="description" content="本文用宝塔面板来说明如何轻松搭建Flarum社区。">
+<meta name="keywords" content="宝塔面板,Flarum,搭建教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宝塔面板搭建Flarum社区の简单教程">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="本文用宝塔面板来说明如何轻松搭建Flarum社区。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;ZHURAN.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;bt.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;LNMP.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;plugins.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;domain.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;hosts.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;composer.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;composer01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;update.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;before.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;install.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;nginx.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;cate.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;777.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;Flarum.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;end.png">
+<meta property="og:updated_time" content="2019-11-14T00:17:49.554Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;03&#x2F;10&#x2F;%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAFlarum%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B&#x2F;ZHURAN.png">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">宝塔面板搭建Flarum社区の简单教程</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">宝塔面板搭建Flarum社区の简单教程</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-10T06:52:25.000Z" itemprop="datePublished" class="page-time">
+  2019-03-10
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#社区预览"><span class="post-toc-number">1.</span> <span class="post-toc-text">社区预览</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开始部署"><span class="post-toc-number">2.</span> <span class="post-toc-text">开始部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装宝塔面板"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装宝塔面板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署LNMP环境"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">部署LNMP环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装PHP扩展-必要"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">安装PHP扩展(必要)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建站点"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">创建站点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装composer"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">安装composer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Composer更换为中国镜像"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Composer更换为中国镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Flarum步骤"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">安装Flarum步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#清空目录文件"><span class="post-toc-number">2.3.3.1.</span> <span class="post-toc-text">清空目录文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#正式安装"><span class="post-toc-number">2.3.3.2.</span> <span class="post-toc-text">正式安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置Nginx重定向"><span class="post-toc-number">2.3.3.3.</span> <span class="post-toc-text">设置Nginx重定向</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置Flarum运行目录"><span class="post-toc-number">2.3.3.4.</span> <span class="post-toc-text">设置Flarum运行目录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#给网站目录权限"><span class="post-toc-number">2.3.3.5.</span> <span class="post-toc-text">给网站目录权限</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装展示"><span class="post-toc-number">2.3.3.6.</span> <span class="post-toc-text">安装展示</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#社区展示"><span class="post-toc-number">3.</span> <span class="post-toc-text">社区展示</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结部分"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结部分</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考链接</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-宝塔面板搭建Flarum简单教程"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">宝塔面板搭建Flarum社区の简单教程</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-10 14:52:25" datetime="2019-03-10T06:52:25.000Z"  itemprop="datePublished">2019-03-10</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>本文用宝塔面板来说明如何轻松搭建Flarum社区。</strong><a id="more"></a></p>
+<h1 id="社区预览"><a href="#社区预览" class="headerlink" title="社区预览"></a>社区预览</h1><p><strong>这里P君就(<del>不知廉耻的</del>)推荐自己的助燃社区啦(<a href="https://bbs.zhuran.org/" target="_blank" rel="noopener">传送门</a>)。</strong><br><img src='./ZHURAN.png'/></p>
+<h1 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h1><h2 id="安装宝塔面板"><a href="#安装宝塔面板" class="headerlink" title="安装宝塔面板"></a>安装宝塔面板</h2><p><strong>Ubuntu/Deepin安装命令(<a href="https://www.bt.cn/bbs/thread-19376-1-1.html" target="_blank" rel="noopener">传送门</a>)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+<img src='./bt.png'/>
+
+<h2 id="部署LNMP环境"><a href="#部署LNMP环境" class="headerlink" title="部署LNMP环境"></a>部署LNMP环境</h2><p><strong>这里我就贴出我的LNMP配置，因为我是本地部署的就不用FTP和PHPmyadmin</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Linux(Ubuntu 18.04)</span><br><span class="line">Nginx 1.8.1</span><br><span class="line">MySQL MariaDB 10.1</span><br><span class="line">PHP 7.2</span><br></pre></td></tr></table></figure>
+<img src='LNMP.png'/>
+
+<h3 id="安装PHP扩展-必要"><a href="#安装PHP扩展-必要" class="headerlink" title="安装PHP扩展(必要)"></a>安装PHP扩展(必要)</h3><p><strong><code>宝塔面板</code>-&gt;<code>软件管理</code>-&gt;<code>已安装PHP</code>-&gt;<code>安装扩展</code>-&gt;安装<code>exif / fileinfo / opcache</code>扩展</strong><br><img src='./plugins.png'/></p>
+<h2 id="创建站点"><a href="#创建站点" class="headerlink" title="创建站点"></a>创建站点</h2><p><strong>接下来，我们要在网站目录<code>/www/wwwroot/flarum.io</code>下进行部署Flarum</strong><br><img src='./domain.png'/></p>
+<p><strong>但是如果你是在本地搭建，你可以像我一样修改<code>hosts</code>文件</strong><br><img src='./hosts.png'/></p>
+<h3 id="安装composer"><a href="#安装composer" class="headerlink" title="安装composer"></a>安装composer</h3><p><strong>这里我们采用命令行式安装composer，我顺带给出composer的官网(<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">传送门</a>)</strong><br><img src='./composer.png'/></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">php -r &quot;copy(&apos;https://getcomposer.org/installer&apos;, &apos;composer-setup.php&apos;);&quot;</span><br><span class="line">php -r &quot;if (hash_file(&apos;sha384&apos;, &apos;composer-setup.php&apos;) === &apos;48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5&apos;) &#123; echo &apos;Installer verified&apos;; &#125; else &#123; echo &apos;Installer corrupt&apos;; unlink(&apos;composer-setup.php&apos;); &#125; echo PHP_EOL;&quot;</span><br><span class="line">php composer-setup.php</span><br><span class="line">php -r &quot;unlink(&apos;composer-setup.php&apos;);&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>当你安装完成，试着输入<code>comsposer</code>如果出现以下样子则表明安装成功。</strong><br><img src='./composer01.png'/></p>
+<p><strong>你首次使用composer他可能会提醒你需要更新。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/composer self-update</span><br></pre></td></tr></table></figure>
+<img src='./update.png'/>
+
+<h3 id="Composer更换为中国镜像"><a href="#Composer更换为中国镜像" class="headerlink" title="Composer更换为中国镜像"></a>Composer更换为中国镜像</h3><p><strong>如果你的服务器在国内，可能会因此下载速度过慢，甚至于十几分钟才安装好，我建议你先输入以下指令使用Composer中国镜像。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer config -g repo.packagist composer https://packagist.phpcomposer.com</span><br></pre></td></tr></table></figure>
+<h3 id="安装Flarum步骤"><a href="#安装Flarum步骤" class="headerlink" title="安装Flarum步骤"></a>安装Flarum步骤</h3><h4 id="清空目录文件"><a href="#清空目录文件" class="headerlink" title="清空目录文件"></a>清空目录文件</h4><p><strong>在安装Flarum之前，你需要清空你创建网站目录下原有的全部文件，否则安装失败。</strong><br><img src='./before.png'/></p>
+<h4 id="正式安装"><a href="#正式安装" class="headerlink" title="正式安装"></a>正式安装</h4><p><strong>首先，切换到网站目录再进行安装。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project flarum/flarum . --stability=beta</span><br></pre></td></tr></table></figure>
+<img src='./install.png'/>
+
+<h4 id="设置Nginx重定向"><a href="#设置Nginx重定向" class="headerlink" title="设置Nginx重定向"></a>设置Nginx重定向</h4><p><strong><code>网站</code>-&gt;<code>站点修改</code>-&gt;<code>配置文件</code>里加入一句类似代码。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include /www/wwwroot/flarum.io/.nginx.conf;</span><br></pre></td></tr></table></figure>
+<img src='./nginx.png'/>
+
+<h4 id="设置Flarum运行目录"><a href="#设置Flarum运行目录" class="headerlink" title="设置Flarum运行目录"></a>设置Flarum运行目录</h4><p><strong><code>网站</code>-&gt;<code>站点修改</code>-&gt;<code>网站目录</code></strong></p>
+<img src='./cate.png'/>
+
+<h4 id="给网站目录权限"><a href="#给网站目录权限" class="headerlink" title="给网站目录权限"></a>给网站目录权限</h4><p><strong>给大家介绍一下，粗人做法。</strong><br><img src='./777.png'/></p>
+<h4 id="安装展示"><a href="#安装展示" class="headerlink" title="安装展示"></a>安装展示</h4><p><strong>顺带提一句。MySQL Host填<code>localhost</code>或<code>127.0.0.1</code></strong><br><img src='./Flarum.png'/></p>
+<h1 id="社区展示"><a href="#社区展示" class="headerlink" title="社区展示"></a>社区展示</h1><img src='./end.png'/>
+
+<h1 id="总结部分"><a href="#总结部分" class="headerlink" title="总结部分"></a>总结部分</h1><p><strong>【1】Flarum由两个外国程序员小哥开发，因此开发进度较慢，到目前为止还只是Beta 8.1测试阶段。</strong><br><strong>【2】作者提醒过，不要在生产环境中应用此程序，因为并不能保证其安全性和排除潜在的Bug。</strong></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><strong>[1] <a href="https://flarum.org/docs/install.html" target="_blank" rel="noopener">Flarum官方安装指南</a></strong><br><strong>[2] <a href="https://bbs.towerlight.top/d/197" target="_blank" rel="noopener">利用宝塔VPS面板安装FlarumChina</a></strong><br><strong>[3] <a href="https://getcomposer.org/download/" target="_blank" rel="noopener">Composer官方</a></strong><br><strong>[4] <a href="https://pkg.phpcomposer.com/" target="_blank" rel="noopener">Composer中国全量镜像</a></strong></p>
+
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-14T00:17:49.554Z" itemprop="dateUpdated">2019-11-14 08:17:49</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flarum/" rel="tag">Flarum</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag">宝塔面板</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" rel="tag">搭建教程</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/03/11/Hexo%E5%8D%9A%E5%AE%A2%E7%94%B1Archer%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2%E4%B8%BAIndigo/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hexo博客由Archer主题更换为Indigo</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/08/%E7%94%A8ss-manager%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%BA%E5%9C%BA%E6%9D%A5%E7%AE%A1%E7%90%86%E8%8A%82%E7%82%B9%E3%80%902%E3%80%91/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">用ss-manager搭建自己的机场来管理节点【2】</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>《算法竞赛 入门经典》 第2章 循环结构程序设计 | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="《算法竞赛 入门经典》(第2版),习题答案,好好学学别人怎么写代码,个人笔记,第2章 循环结构程序设计">
+    <meta name="description" content="个人笔记，仅供参考，我要好好学编程!!!。">
+<meta name="keywords" content="《算法竞赛 入门经典》(第2版),习题答案,好好学学别人怎么写代码,个人笔记,第2章 循环结构程序设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《算法竞赛 入门经典》 第2章 循环结构程序设计">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC2%E7%AB%A0-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="个人笔记，仅供参考，我要好好学编程!!!。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC2%E7%AB%A0-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1&#x2F;第2章%20循环结构程序设计.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC2%E7%AB%A0-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1&#x2F;总结.jpg">
+<meta property="og:updated_time" content="2019-11-13T20:29:47.257Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC2%E7%AB%A0-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1&#x2F;第2章%20循环结构程序设计.png">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">《算法竞赛 入门经典》 第2章 循环结构程序设计</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">《算法竞赛 入门经典》 第2章 循环结构程序设计</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-12T10:36:40.000Z" itemprop="datePublished" class="page-time">
+  2019-11-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#大纲"><span class="post-toc-number">1.</span> <span class="post-toc-text">大纲</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#习题"><span class="post-toc-number">2.</span> <span class="post-toc-text">习题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题2-1-水仙花数"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">习题2-1 水仙花数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">答案</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">输出</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题2-2-韩信点兵"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">习题2-2 韩信点兵</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-1"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路-1"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-1"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题2-3-倒三角形"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">习题2-3 倒三角形</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-2"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路-2"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-2"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题2-4-子序列的和"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">习题2-4 子序列的和</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-3"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路-3"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-3"><span class="post-toc-number">2.4.3.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题2-5-分数化小数"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">习题2-5 分数化小数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-4"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路-4"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-4"><span class="post-toc-number">2.5.3.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题2-6-排列"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">习题2-6 排列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-5"><span class="post-toc-number">2.6.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路-5"><span class="post-toc-number">2.6.2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出-1"><span class="post-toc-number">2.6.3.</span> <span class="post-toc-text">输出</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目1"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">题目1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#任务1-修改第7行，不修改第6行。"><span class="post-toc-number">2.7.1.</span> <span class="post-toc-text">任务1 修改第7行，不修改第6行。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#任务2-修改第6行，不修改第7行。"><span class="post-toc-number">2.7.2.</span> <span class="post-toc-text">任务2 修改第6行，不修改第7行。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目2"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">题目2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果"><span class="post-toc-number">2.8.1.</span> <span class="post-toc-text">结果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出-2"><span class="post-toc-number">2.8.2.</span> <span class="post-toc-text">输出</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#小结"><span class="post-toc-number">3.</span> <span class="post-toc-text">小结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-《算法竞赛-入门经典》第2章-循环结构程序设计"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">《算法竞赛 入门经典》 第2章 循环结构程序设计</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-12 18:36:40" datetime="2019-11-12T10:36:40.000Z"  itemprop="datePublished">2019-11-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>个人笔记，仅供参考，我要好好学编程!!!。</strong><a id="more"></a></p>
+<h1 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h1><img src='./第2章 循环结构程序设计.png'/>
+
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><h2 id="习题2-1-水仙花数"><a href="#习题2-1-水仙花数" class="headerlink" title="习题2-1 水仙花数"></a>习题2-1 水仙花数</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>输出100~999中的所有水仙花数，若三位数ABC满足ABC=A³+B³+C³，则称其为水仙花数。如153=1³+5³+3³，所以153就是水仙花数。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>设置一个for循环，让变量i在100-999里进行逐个条件验证，满足水仙花数条件的当即输出该值。</p>
+<h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,a,b,c;</span><br><span class="line">    for(i=100;i&lt;=999;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a=i/100;</span><br><span class="line">        b=i/10%10;</span><br><span class="line">        c=i%10;</span><br><span class="line">        if(i==a*a*a+b*b*b+c*c*c)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;%d &quot;,i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">153 370 371 407</span><br></pre></td></tr></table></figure>
+
+<h2 id="习题2-2-韩信点兵"><a href="#习题2-2-韩信点兵" class="headerlink" title="习题2-2 韩信点兵"></a>习题2-2 韩信点兵</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>相传韩信才智过人，从不直接清点自己军队的人数，只要让士兵先后以三人一排、五人一排、七人一排地变换队形，而他每次只掠一眼队伍的排尾就知道总人数了。输入包含多组数据，每组数据包含3个非负整数a,b,c，表示每种队形排尾的人数（a&lt;3,b&lt;5,c&lt;7）,输出总人数的最小值（或报告无解）。已知总人数不小于10，不超过100，输入到文件结束为止。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">样例输入：</span><br><span class="line">2 1 6</span><br><span class="line">2 1 3</span><br><span class="line"></span><br><span class="line">样例输出：</span><br><span class="line">Case 1: 41</span><br><span class="line">Case 2 :No answer</span><br></pre></td></tr></table></figure>
+<p><strong>data.in</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2 1 6</span><br><span class="line">2 1 3</span><br></pre></td></tr></table></figure>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>这里列出<strong>基础版</strong>、<strong>重定向版</strong>和<strong>fopen版</strong>两种方式</p>
+<h3 id="答案-1"><a href="#答案-1" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//基础版</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,q[3];</span><br><span class="line">    for(i=0;i&lt;=2;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;q[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for(n=10;n&lt;=100;n++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(n%3==q[0] &amp;&amp; n%5==q[1] &amp;&amp; n%7==q[2])</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;%d\n&quot;,n);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n==101)</span><br><span class="line">        printf(&quot;No answer\n&quot;);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//重定向版</span><br><span class="line">#define LOCAL</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef LOCAL</span><br><span class="line">    freopen(&quot;data.in&quot;,&quot;r&quot;,stdin);</span><br><span class="line">    freopen(&quot;data7.out&quot;,&quot;w&quot;,stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">    int q[3],kase=1;    //这里声明一个具有3个元素的数组用来存放队尾数据，kase则是计数器</span><br><span class="line"></span><br><span class="line">    while(scanf(&quot;%d %d %d&quot;,&amp;q[0],&amp;q[1],&amp;q[2])==3)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int n=10;n&lt;=100;n++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(n%3==q[0] &amp;&amp; n%5==q[1] &amp;&amp; n%7==q[2])</span><br><span class="line">            &#123;</span><br><span class="line">                printf(&quot;Case %d: %d\n&quot;,kase++,n);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;Case %d: No answer!\n&quot;,kase++);</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//fopen版本</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    FILE *fin, *fout;</span><br><span class="line">    fin = fopen(&quot;data.in&quot;,&quot;r&quot;);</span><br><span class="line">    fout = fopen(&quot;data5.out&quot;,&quot;w&quot;);</span><br><span class="line"></span><br><span class="line">    int q[3],kase=1;    //这里声明一个具有3个元素的数组用来存放队尾数据，kase则是计数器</span><br><span class="line"></span><br><span class="line">    while(fscanf(fin,&quot;%d %d %d&quot;,&amp;q[0],&amp;q[1],&amp;q[2])==3)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int n=10;n&lt;=100;n++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(n%3==q[0] &amp;&amp; n%5==q[1] &amp;&amp; n%7==q[2])</span><br><span class="line">            &#123;</span><br><span class="line">                fprintf(fout,&quot;Case %d: %d\n&quot;,kase++,n);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        fprintf(fout,&quot;Case %d: No answer!\n&quot;,kase++);</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="习题2-3-倒三角形"><a href="#习题2-3-倒三角形" class="headerlink" title="习题2-3 倒三角形"></a>习题2-3 倒三角形</h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>输入正整数n≤20，输出一个n层的倒三角。例如，n=5时输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#########</span><br><span class="line"> #######</span><br><span class="line">  #####</span><br><span class="line">   ###</span><br><span class="line">    #</span><br></pre></td></tr></table></figure>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>设计思路：设置两个循环然后嵌套，第一层循环控制行数，第二层循环控制输出空格和#。</p>
+<h3 id="答案-2"><a href="#答案-2" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,j,k;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line"></span><br><span class="line">    for(i=n;i&gt;=1;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        for(j=1;j&lt;=n-i;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        for(k=1;k&lt;=2*i-1;k++)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;#&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;   </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题2-4-子序列的和"><a href="#习题2-4-子序列的和" class="headerlink" title="习题2-4 子序列的和"></a>习题2-4 子序列的和</h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>输入两个正整数 n&lt;m&lt;10^{6}，输出 <math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac> <mrow> <mn> 1 </mn> </mrow> <mrow> <msup> <mrow> <mi> n </mi> </mrow> <mrow> <mn> 2 </mn> </mrow> </msup> </mrow> </mfrac> <mo> + </mo> <mfrac> <mrow> <mn> 1 </mn> </mrow> <mrow> <msup> <mrow> <mfenced> <mrow> <mi> n </mi> <mo> + </mo> <mn> 1 </mn> </mrow> </mfenced> </mrow> <mrow> <mn> 2 </mn> </mrow> </msup> </mrow> </mfrac> <mo> + </mo> <mo> &#x2026; <!-- horizontal ellipsis --> </mo> <mo> + </mo> <mfrac> <mrow> <mn> 1 </mn> </mrow> <mrow> <msup> <mrow> <mi> m </mi> </mrow> <mrow> <mn> 2 </mn> </mrow> </msup> </mrow> </mfrac> </math>，保留5位小数。输出包含多组数据，结束标记为 n=m=0。<br>文件data.in</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 4</span><br><span class="line">65536 655360</span><br><span class="line">0 0</span><br></pre></td></tr></table></figure>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>核心算法：1、声明浮点型变量用于存储数据并且进行累加；2、while循环条件用来判断是否有0 0输入来结束。</p>
+<h3 id="答案-3"><a href="#答案-3" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#define MAX 1000000</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    FILE *fin,*fout;</span><br><span class="line">    fin = fopen(&quot;data.in&quot;,&quot;r&quot;);</span><br><span class="line">    fout = fopen(&quot;data.out&quot;,&quot;w&quot;);</span><br><span class="line"></span><br><span class="line">    int kase=1;</span><br><span class="line">    double n,m,s=0,t=0;</span><br><span class="line"></span><br><span class="line">    while(fscanf(fin,&quot;%lf %lf&quot;,&amp;n,&amp;m)==2 &amp;&amp; n &amp;&amp; m)</span><br><span class="line">    &#123;</span><br><span class="line">        s=0;</span><br><span class="line">        if(n&lt;m &amp;&amp; m&lt;MAX)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;%.f %.f\n&quot;,n,m);</span><br><span class="line">            for(int i=0;n+i&lt;=m;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                t=1/((n+i)*(n+i));</span><br><span class="line">                s=s+t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        fprintf(fout,&quot;Case %d: %.5f\n&quot;,kase++,s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fclose(fin);</span><br><span class="line">    fclose(fout);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="习题2-5-分数化小数"><a href="#习题2-5-分数化小数" class="headerlink" title="习题2-5 分数化小数"></a>习题2-5 分数化小数</h2><h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>输入正整数a,b,c,输出a/b的小数形式，精确到小数点后c位。a,b≤10⁶, c≤100。输入包含多组数据，结束标记为 a=b=c=0。</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>核心算法：1、在于先求出浮点型结果扩大10^c倍后再强制转化成整型数据，剔除小数点c位后的数值，最后选择用%g的输出格式除去输出时多余的0；声明一个kase计数器来记录当前的样例序号。</p>
+<h3 id="答案-4"><a href="#答案-4" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    FILE *fin,*fout;</span><br><span class="line">    fin = fopen(&quot;25.in&quot;,&quot;r&quot;);</span><br><span class="line">    fout = fopen(&quot;25.out&quot;,&quot;w&quot;);</span><br><span class="line">    int kase=1;</span><br><span class="line">    float a,b,c,d,e=1.0;</span><br><span class="line">    int f;</span><br><span class="line">    while(fscanf(fin,&quot;%f %f %f&quot;,&amp;a,&amp;b,&amp;c)==3 &amp;&amp; a &amp;&amp; b &amp;&amp; c)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a&lt;=1000000 &amp;&amp; b&lt;=1000000 &amp;&amp; c&lt;=100)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int i=1;i&lt;=c;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                e*=10;</span><br><span class="line">            &#125;</span><br><span class="line">            d=a/b*e;</span><br><span class="line">            f = (int) (d+0.5);</span><br><span class="line">            d=f/e;</span><br><span class="line">            fprintf(fout,&quot;Case %d: %g&quot;,kase++,d);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fin);</span><br><span class="line">    fclose(fout);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题2-6-排列"><a href="#习题2-6-排列" class="headerlink" title="习题2-6 排列"></a>习题2-6 排列</h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>用1,2,3,…,9组成3个三位数abc，def和ghi，每个数字恰好使用一次，求abc:def:ghi=1:2:3。按照“abc def ghi”的格式输出所有解，每行一个解。提示：不必太动脑筋。</p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>例题不多详解，上代码(QAQ讲道理这道题因为题目的最后一句话我反而多想了…)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">//我的傻逼做法</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b,c,d,e,f,g,h,i,x,y,z,j,k,l,r,s,t,q[864],p[504],u[10];</span><br><span class="line">    for(int l=0;l&lt;=10;l++)</span><br><span class="line">    &#123;</span><br><span class="line">        u[l]=0;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i=123;i&lt;=987;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(j=0;j&lt;=863;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            q[j]=i;</span><br><span class="line">            // printf(&quot;%d\n&quot;,q[j]);</span><br><span class="line">            x=q[j]/100;</span><br><span class="line">            y=q[j]/10%10;</span><br><span class="line">            z=q[j]%10;</span><br><span class="line">            // printf(&quot;%d %d %d\n&quot;,x,y,z); //到这里正常</span><br><span class="line">            if(x!=y &amp;&amp; y!=z &amp;&amp; x!=z)</span><br><span class="line">            &#123;</span><br><span class="line">                for(k=0;k&lt;=503;k++)</span><br><span class="line">                &#123;</span><br><span class="line">                    p[k]=x*100+y*10+z;</span><br><span class="line">                    // printf(&quot;%d\n&quot;,p[k]);        //到这里正常</span><br><span class="line">                    r=p[k];</span><br><span class="line">                    s=2*p[k];</span><br><span class="line">                    t=3*p[k];</span><br><span class="line"></span><br><span class="line">                    if(t&lt;=987 &amp;&amp; r&lt;=329)</span><br><span class="line">                    &#123;</span><br><span class="line">                        // printf(&quot;[1]%d %d %d\n&quot;,r,s,t)</span><br><span class="line">                        a=r/100+r/10%10+r%10+s/100+s/10%10+s%10+t/100+t/10%10+t%10;</span><br><span class="line">                        b=(r/100)*(r/10%10)*(r%10)*(s/100)*(s/10%10)*(s%10)*(t/100)*(t/10%10)*(t%10);</span><br><span class="line">                        // printf(&quot;[1]%d\n&quot;,b);</span><br><span class="line">                        // printf(&quot;[2]%d\n&quot;,a);</span><br><span class="line">                        if(a==45 &amp;&amp; b==362880)</span><br><span class="line">                        &#123;</span><br><span class="line">                            for(int m=1;m&lt;=3;m++)</span><br><span class="line">                            &#123;</span><br><span class="line">                                printf(&quot;%d %d %d\n&quot;,r,s,t);</span><br><span class="line">                                break;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//大神的做法</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">void result(int num, int &amp;result_add, int &amp;result_mul)</span><br><span class="line">&#123;</span><br><span class="line">    int i,j,k;</span><br><span class="line">    i = num / 100;</span><br><span class="line">    j = num / 10 % 10;</span><br><span class="line">    k = num % 10;</span><br><span class="line">    result_add += i + j + k;</span><br><span class="line">    result_mul *= i * j * k;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j,k;</span><br><span class="line">    int result_add, result_mul;</span><br><span class="line">    for( i = 123; i &lt;= 329; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        j = i * 2;</span><br><span class="line">        k = i * 3;</span><br><span class="line">        result_add = 0;</span><br><span class="line">        result_mul = 1;</span><br><span class="line">        result(i, result_add, result_mul);</span><br><span class="line">        result(j, result_add, result_mul);</span><br><span class="line">        result(k, result_add, result_mul);</span><br><span class="line"></span><br><span class="line">        if(result_add == 45 &amp;&amp; result_mul == 362880)</span><br><span class="line">            printf(&quot;%d %d %d\n&quot;, i, j, k);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">192 384 576</span><br><span class="line">219 438 657</span><br><span class="line">273 546 819</span><br><span class="line">327 654 981</span><br></pre></td></tr></table></figure>
+<h2 id="题目1"><a href="#题目1" class="headerlink" title="题目1"></a>题目1</h2><p>假设需要输出2,4,6,8,···,2n，每个一行，能不通过对程序2-1进行小小的改动来实现呢？为了方便，现把程序复制如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d,&amp;n&quot;);</span><br><span class="line">    for(int i = 1; i &lt;= n; i++&gt;</span><br><span class="line">        printf&quot;%d\n&apos;,i);</span><br><span class="line"></span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="任务1-修改第7行，不修改第6行。"><a href="#任务1-修改第7行，不修改第6行。" class="headerlink" title="任务1 修改第7行，不修改第6行。"></a>任务1 修改第7行，不修改第6行。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(int i=2;i&lt;=n;i+=2)</span><br></pre></td></tr></table></figure>
+<h3 id="任务2-修改第6行，不修改第7行。"><a href="#任务2-修改第6行，不修改第7行。" class="headerlink" title="任务2 修改第6行，不修改第7行。"></a>任务2 修改第6行，不修改第7行。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%d\n&quot;,2*i);</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目2"><a href="#题目2" class="headerlink" title="题目2"></a>题目2</h2><p>下面的程序运行结果是什么？“！=”运算符表示“不相等”。提示：请上机实验，不要凭主观感觉回答。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    double i;</span><br><span class="line">    for(i = 0; i != 10; i += 0.1)</span><br><span class="line">        printf(&quot;%.1f\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>1、实验结果并不是10或者10.0的问题，根本原因在于i本身就是浮点型数据<br>2、c语言中double类型数据计算是有误差的，也就是说你每次加0.1,可能永远得不到整10，有可能是0.900001<br>3、结果是一串从0-inf的浮点型数据</p>
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">Last login: Tue Nov  5 21:24:51 on ttys000</span><br><span class="line">root:~ easyc$ /Users/easyc/Desktop/算法竞赛/第一部分\ 语言篇/第2章\ 循环结构程序设计/2.5\ 注释与习题/8 ; exit;0.0</span><br><span class="line">0.1</span><br><span class="line">0.2</span><br><span class="line">0.3</span><br><span class="line">0.4</span><br><span class="line">0.5</span><br><span class="line">0.6</span><br><span class="line">0.7</span><br><span class="line">0.8</span><br><span class="line">0.9</span><br><span class="line">1.0</span><br><span class="line">1.1</span><br><span class="line">1.2</span><br><span class="line">1.3</span><br><span class="line">1.4</span><br><span class="line">1.5</span><br><span class="line">1.6</span><br><span class="line">1.7</span><br><span class="line">1.8</span><br><span class="line">1.9</span><br><span class="line">2.0</span><br><span class="line">2.1</span><br><span class="line">2.2</span><br><span class="line">2.3</span><br><span class="line">2.4</span><br><span class="line">2.5</span><br><span class="line">2.6</span><br><span class="line">2.7</span><br><span class="line">2.8</span><br><span class="line">2.9</span><br><span class="line">3.0</span><br><span class="line">3.1</span><br><span class="line">3.2</span><br><span class="line">3.3</span><br><span class="line">3.4</span><br><span class="line">3.5</span><br><span class="line">3.6</span><br><span class="line">3.7</span><br><span class="line">3.8</span><br><span class="line">3.9</span><br><span class="line">4.0</span><br><span class="line">4.1</span><br><span class="line">4.2</span><br><span class="line">4.3</span><br><span class="line">4.4</span><br><span class="line">4.5</span><br><span class="line">4.6</span><br><span class="line">4.7</span><br><span class="line">4.8</span><br><span class="line">4.9</span><br><span class="line">5.0</span><br><span class="line">5.1</span><br><span class="line">5.2</span><br><span class="line">5.3</span><br><span class="line">5.4</span><br><span class="line">5.5</span><br><span class="line">5.6</span><br><span class="line">5.7</span><br><span class="line">5.8</span><br><span class="line">5.9</span><br><span class="line">6.0</span><br><span class="line">6.1</span><br><span class="line">6.2</span><br><span class="line">6.3</span><br><span class="line">6.4</span><br><span class="line">6.5</span><br><span class="line">6.6</span><br><span class="line">6.7</span><br><span class="line">6.8</span><br><span class="line">6.9</span><br><span class="line">7.0</span><br><span class="line">7.1</span><br><span class="line">7.2</span><br><span class="line">7.3</span><br><span class="line">7.4</span><br><span class="line">7.5</span><br><span class="line">7.6</span><br><span class="line">7.7</span><br><span class="line">7.8</span><br><span class="line">7.9</span><br><span class="line">8.0</span><br><span class="line">8.1</span><br><span class="line">8.2</span><br><span class="line">8.3</span><br><span class="line">8.4</span><br><span class="line">8.5</span><br><span class="line">8.6</span><br><span class="line">8.7</span><br><span class="line">8.8</span><br><span class="line">8.9</span><br><span class="line">9.0</span><br><span class="line">9.1</span><br><span class="line">9.2</span><br><span class="line">9.3</span><br><span class="line">9.4</span><br><span class="line">9.5</span><br><span class="line">9.6</span><br><span class="line">9.7</span><br><span class="line">9.8</span><br><span class="line">9.9</span><br><span class="line">10.0</span><br><span class="line">10.1</span><br><span class="line">10.2</span><br><span class="line">10.3</span><br><span class="line">10.4</span><br><span class="line">10.5</span><br><span class="line">10.6</span><br><span class="line">10.7</span><br><span class="line">10.8</span><br><span class="line">10.9</span><br><span class="line">11.0</span><br><span class="line">11.1</span><br><span class="line">11.2</span><br><span class="line">11.3</span><br><span class="line">11.4</span><br><span class="line">11.5</span><br><span class="line">11.6</span><br><span class="line">11.7</span><br><span class="line">11.8</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p><img src='./总结.jpg'/></img></p>
+
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-13T20:29:47.257Z" itemprop="dateUpdated">2019-11-14 04:29:47</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B-%E7%AC%AC2%E7%89%88/" rel="tag">《算法竞赛 入门经典》(第2版)</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/" rel="tag">个人笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/" rel="tag">习题答案</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A5%BD%E5%A5%BD%E5%AD%A6%E5%AD%A6%E5%88%AB%E4%BA%BA%E6%80%8E%E4%B9%88%E5%86%99%E4%BB%A3%E7%A0%81/" rel="tag">好好学学别人怎么写代码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%AC2%E7%AB%A0-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="tag">第2章 循环结构程序设计</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/16/%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91C-C-%E5%A6%82%E4%BD%95%E6%95%B4%E8%A1%8C%E8%AF%BB%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%9F/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">【转载】C/C++如何整行读入字符串？</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/12/%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC1%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">《算法竞赛 入门经典》第1章 程序设计入门</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

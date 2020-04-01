@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>《算法竞赛 入门经典》第1章 程序设计入门 | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="《算法竞赛 入门经典》(第2版),第1章 程序设计入门,习题答案,好好学学别人怎么写代码,个人笔记">
+    <meta name="description" content="个人笔记，仅供参考，求求自己好好学学别人怎么写代码的叭!!!。">
+<meta name="keywords" content="《算法竞赛 入门经典》(第2版),第1章 程序设计入门,习题答案,好好学学别人怎么写代码,个人笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《算法竞赛 入门经典》第1章 程序设计入门">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC1%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="个人笔记，仅供参考，求求自己好好学学别人怎么写代码的叭!!!。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC1%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8&#x2F;大纲.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC1%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8&#x2F;小结.jpg">
+<meta property="og:updated_time" content="2019-11-14T00:11:58.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC1%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8&#x2F;大纲.png">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">《算法竞赛 入门经典》第1章 程序设计入门</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">《算法竞赛 入门经典》第1章 程序设计入门</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-12T10:32:50.000Z" itemprop="datePublished" class="page-time">
+  2019-11-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#大纲"><span class="post-toc-number">1.</span> <span class="post-toc-text">大纲</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实验"><span class="post-toc-number">2.</span> <span class="post-toc-text">实验</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型实验"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">数据类型实验</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入格式实验"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">输入格式实验</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#习题"><span class="post-toc-number">3.</span> <span class="post-toc-text">习题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题1-1-平均数"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">习题1-1 平均数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题1-2-温度"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">习题1-2 温度</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-1"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-1"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题1-3-连续和"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">习题1-3 连续和</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-2"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-2"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题1-4-正弦和余弦"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">习题1-4 正弦和余弦</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-3"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-3"><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题1-5-打折"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">习题1-5 打折</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-4"><span class="post-toc-number">3.5.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-4"><span class="post-toc-number">3.5.2.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题1-6-三角形"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">习题1-6 三角形</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-5"><span class="post-toc-number">3.6.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-5"><span class="post-toc-number">3.6.2.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#习题1-7-年份"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">习题1-7 年份</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目-6"><span class="post-toc-number">3.7.1.</span> <span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#答案-6"><span class="post-toc-number">3.7.2.</span> <span class="post-toc-text">答案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#小结"><span class="post-toc-number">4.</span> <span class="post-toc-text">小结</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-《算法竞赛-入门经典》第1章-程序设计入门"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">《算法竞赛 入门经典》第1章 程序设计入门</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-12 18:32:50" datetime="2019-11-12T10:32:50.000Z"  itemprop="datePublished">2019-11-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>个人笔记，仅供参考，求求自己好好学学别人怎么写代码的叭!!!。</strong><a id="more"></a></p>
+<h1 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h1><img src='./大纲.png'/>
+
+<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1><h2 id="数据类型实验"><a href="#数据类型实验" class="headerlink" title="数据类型实验"></a>数据类型实验</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">实验A1: 11111*11111=123454321 / 111111*111111=-539247567 / 111111111*111111111=1653732529</span><br><span class="line">实验A2: macOS下整型变量输入浮点型数据直接输出11111 193015862 1410561978</span><br><span class="line">实验A3: sqrt(-10) 输出nan</span><br><span class="line">实验A4: 1.000000/0.000000=inf(infinite) / 0.000000/0.000000=nan(not a number)</span><br><span class="line">实验A5: 表达式1/0(Floating point exception: 8)</span><br></pre></td></tr></table></figure>
+<h2 id="输入格式实验"><a href="#输入格式实验" class="headerlink" title="输入格式实验"></a>输入格式实验</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">实验B1: 同行空格分开输入12 2，不影响</span><br><span class="line">实验B2: 不同行输入12和2，不影响</span><br><span class="line">实验B3: 输入12和2时同时输入空格或TAB键，不影响</span><br><span class="line">实验B4: 把2换成字符s，12 32766</span><br></pre></td></tr></table></figure>
+
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><h2 id="习题1-1-平均数"><a href="#习题1-1-平均数" class="headerlink" title="习题1-1 平均数"></a>习题1-1 平均数</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>输入三个整数，输出他们的平均值，保留三位小数。</p>
+<h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float a,b,c;</span><br><span class="line">    scanf(&quot;%f%f%f&quot;,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    printf(&quot;%.3f\n&quot;,(a+b+c)/3);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="习题1-2-温度"><a href="#习题1-2-温度" class="headerlink" title="习题1-2 温度"></a>习题1-2 温度</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>输入华氏温度f，输出对应的摄氏温度c，保留3位小数。提示：c=5(f-32)/9。</p>
+<h3 id="答案-1"><a href="#答案-1" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float f,c;</span><br><span class="line">    scanf(&quot;%f&quot;,&amp;f);</span><br><span class="line">    printf(&quot;c = %.3f\n&quot;,5*(f-32)/9);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题1-3-连续和"><a href="#习题1-3-连续和" class="headerlink" title="习题1-3 连续和"></a>习题1-3 连续和</h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>输入正整数n，输出1+2+···+n的值。提示：目标是解决问题，而不是练习编程。</p>
+<h3 id="答案-2"><a href="#答案-2" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,t=1;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    printf(&quot;%d\n&quot;,n*t+(n-1));</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="习题1-4-正弦和余弦"><a href="#习题1-4-正弦和余弦" class="headerlink" title="习题1-4 正弦和余弦"></a>习题1-4 正弦和余弦</h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>输入正整数n(n&lt;360)，输出n度的正弦，余弦函数值。提示：使用数学函数。</p>
+<h3 id="答案-3"><a href="#答案-3" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    const double pi = acos(-1.0);</span><br><span class="line">    int n,x=1,y=1;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    printf(&quot;%.2lf %.2lf\n&quot;,sin(n*pi/180),cos(n*pi/180));</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题1-5-打折"><a href="#习题1-5-打折" class="headerlink" title="习题1-5 打折"></a>习题1-5 打折</h2><h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>一件衣服95元，若消费300元，可打八五折。输入购买衣服件数，输出需要支付的金额（单位：元），保留两位小数。</p>
+<h3 id="答案-4"><a href="#答案-4" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float n;</span><br><span class="line">    scanf(&quot;%f&quot;,&amp;n);</span><br><span class="line">    if(n*95 &gt;= 300)</span><br><span class="line">        printf(&quot;%.2f\n&quot;,n*95*0.85);</span><br><span class="line">    else</span><br><span class="line">        printf(&quot;%.2f\n&quot;,n*95);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="习题1-6-三角形"><a href="#习题1-6-三角形" class="headerlink" title="习题1-6 三角形"></a>习题1-6 三角形</h2><h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>输入三角形3条边的长度值（均为正整数），判断是否能够为直角三角形的3个边长，如果可以，则输出yes,如果不能，则输出no。如果无法构成三角形，则输出not a triangle。</p>
+<h3 id="答案-5"><a href="#答案-5" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b,c;</span><br><span class="line">    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    if(a*a+b*b==c*c || a*a+b*b==c*c || a*a+b*b==c*c)</span><br><span class="line">        printf(&quot;yes\n&quot;);</span><br><span class="line">    else</span><br><span class="line">        printf(&quot;not a triangle\n&quot;);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题1-7-年份"><a href="#习题1-7-年份" class="headerlink" title="习题1-7 年份"></a>习题1-7 年份</h2><h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><p>题目:输入年份，判断是否为润年，如果是，输出yes，否，输出no。提示：简单的除以4是不够的。</p>
+<h3 id="答案-6"><a href="#答案-6" class="headerlink" title="答案"></a>答案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int LeapYear;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;LeapYear);</span><br><span class="line">    if((LeapYear%400==0) || (LeapYear%4==0 &amp;&amp; LeapYear%100!=0))</span><br><span class="line">        printf(&quot;闰年\n&quot;);</span><br><span class="line">    else</span><br><span class="line">        printf(&quot;平年\n&quot;);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><strong>问题1：int型整数的最小值和最大值时多少（需要精确值）？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main() &#123;    </span><br><span class="line">//  int n = 0, i = 0;</span><br><span class="line">//  while (n &gt;= i)</span><br><span class="line">//  &#123;</span><br><span class="line">//    n = i;</span><br><span class="line">//    i--;</span><br><span class="line">//  &#125;</span><br><span class="line">//  printf(&quot;%d&quot;, n);   //-2147483648(最小值)</span><br><span class="line"> </span><br><span class="line"> int n = 0, i = 0;</span><br><span class="line"> while (n &lt;= i)</span><br><span class="line"> &#123;</span><br><span class="line">   n = i;</span><br><span class="line">   i++;</span><br><span class="line"> &#125;</span><br><span class="line"> printf(&quot;%d&quot;,n);     //2147483647(最大值)</span><br><span class="line"></span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>问题2：double型浮点数能精确到多少位小数？或者，这个问题本身值得商榷？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">  </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	double i = 1.0, j = 3.0;</span><br><span class="line">	</span><br><span class="line">	printf(&quot;%.20lf\n&quot;,i/j); //0.33333333333333331000,16位</span><br><span class="line">	</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>问题3：double型浮点数最大正数值和最小整数值分别是多少（不必特别精确）？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;float.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   printf(&quot;float 存储最大字节数 : %lu \n&quot;, sizeof(float));  //4</span><br><span class="line">   printf(&quot;float 最小值: %E\n&quot;, FLT_MIN );  //1.175494E-038</span><br><span class="line">   printf(&quot;float 最大值: %E\n&quot;, FLT_MAX );  //3.402823E+038</span><br><span class="line">   printf(&quot;精度值: %d\n&quot;, FLT_DIG );    //6</span><br><span class="line">   </span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>问题4: 逻辑运算符号&amp;&amp;、||、！的相对优先级是怎样的？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">优先级：</span><br><span class="line">! 逻辑非运算符 &gt; &amp;&amp; 逻辑与运算符 &gt; || 逻辑或运算符</span><br></pre></td></tr></table></figure>
+<p><strong>问题5: if(a) if(b) x++; else y++;的确切含义是什么？这个else应和哪个if配套？有没有明确表达出配套方法？</strong><br>这个else应该和if(a)配套。使用恰当的缩进、换行和花括号可以明确的表达出配套。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (a) &#123;</span><br><span class="line"> if (b)</span><br><span class="line">     x++;</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line"> y++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><img src='./小结.jpg'/>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><strong>[1] <a href="https://blog.csdn.net/panderang/article/details/54096426" target="_blank" rel="noopener">算法竞赛入门经典第二版（刘汝佳）第一章思考题 - CSDN</a></strong></p>
+<p><strong>[2] <a href="https://zhidao.baidu.com/question/172821267.html" target="_blank" rel="noopener">逻辑运算符号&amp;&amp;、||、！的 相对优先级是怎样的? - 百度知道</a></strong></p>
+
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-14T00:11:58.056Z" itemprop="dateUpdated">2019-11-14 08:11:58</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B-%E7%AC%AC2%E7%89%88/" rel="tag">《算法竞赛 入门经典》(第2版)</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/" rel="tag">个人笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/" rel="tag">习题答案</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A5%BD%E5%A5%BD%E5%AD%A6%E5%AD%A6%E5%88%AB%E4%BA%BA%E6%80%8E%E4%B9%88%E5%86%99%E4%BB%A3%E7%A0%81/" rel="tag">好好学学别人怎么写代码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%AC1%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/" rel="tag">第1章 程序设计入门</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/12/%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC2%E7%AB%A0-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">《算法竞赛 入门经典》 第2章 循环结构程序设计</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/12/%E5%8D%9A%E5%AE%A2%E5%B7%B2%E7%BB%8F%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E5%8A%9F%E8%83%BD%EF%BC%8C%E6%B5%8B%E8%AF%95%E5%AF%86%E7%A0%81%E4%B8%BACode2019/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">博客已经实现文章加密功能，插件hexo-blog-encrypt</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

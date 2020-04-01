@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Kali安装搜狗输入法 | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="搜狗输入法,Kali,VMware for linux">
+    <meta name="description" content="本文主要内容来自于互联网，本文仅做记录。">
+<meta name="keywords" content="搜狗输入法,Kali,VMware for linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kali安装搜狗输入法">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;04&#x2F;25&#x2F;Kali%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="本文主要内容来自于互联网，本文仅做记录。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;04&#x2F;25&#x2F;Kali%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95&#x2F;0.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;04&#x2F;25&#x2F;Kali%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;04&#x2F;25&#x2F;Kali%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;04&#x2F;25&#x2F;Kali%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;04&#x2F;25&#x2F;Kali%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;04&#x2F;25&#x2F;Kali%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95&#x2F;6.png">
+<meta property="og:updated_time" content="2019-04-27T15:38:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;04&#x2F;25&#x2F;Kali%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95&#x2F;0.png">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Kali安装搜狗输入法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Kali安装搜狗输入法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-25T06:28:59.000Z" itemprop="datePublished" class="page-time">
+  2019-04-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改镜像源"><span class="post-toc-number">1.</span> <span class="post-toc-text">修改镜像源</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装fcitx"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装fcitx</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#搜狗输入法"><span class="post-toc-number">3.</span> <span class="post-toc-text">搜狗输入法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修复"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">修复</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设置fcitx"><span class="post-toc-number">4.</span> <span class="post-toc-text">设置fcitx</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Kali安装搜狗输入法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Kali安装搜狗输入法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-25 14:28:59" datetime="2019-04-25T06:28:59.000Z"  itemprop="datePublished">2019-04-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>本文主要内容来自于互联网，本文仅做记录。<a id="more"></a></strong></p>
+<h1 id="修改镜像源"><a href="#修改镜像源" class="headerlink" title="修改镜像源"></a>修改镜像源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p><strong>有这两个就够了，一个是官方的一个是阿里云，速度都很稳定。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deb http://http.kali.org/kali kali-rolling main non-free contrib</span><br><span class="line"></span><br><span class="line">deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span><br></pre></td></tr></table></figure>
+<p><strong>别忘了刷新一下更新源。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<img src='./0.png'>
+
+<h1 id="安装fcitx"><a href="#安装fcitx" class="headerlink" title="安装fcitx"></a>安装fcitx</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install fcitx</span><br></pre></td></tr></table></figure>
+
+<h1 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a>搜狗输入法</h1><p><strong>看情况选择32/64位，<a href="https://pinyin.sogou.com/linux/?r=pinyin" target="_blank" rel="noopener">传送门</a>。</strong></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i sogoupinyin_2.2.0.0108_amd64.deb</span><br></pre></td></tr></table></figure>
+<img src='./2.png'>
+
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p><strong>如果报错，也不用担心，修复一下相关依赖即可，。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get -f install</span><br></pre></td></tr></table></figure>
+<img src='./3.png'>
+
+<h1 id="设置fcitx"><a href="#设置fcitx" class="headerlink" title="设置fcitx"></a>设置fcitx</h1><p><strong><code>Win键</code>搜索<code>fctix configuation</code></strong> </p>
+<img src='./4.png'>
+
+<p><strong>点击斜面的<code>+</code>键-&gt;取消勾选<code>Only Show Current Language</code>-&gt;选择<code>Sougou Pinyin</code>-&gt;<code>OK</code></strong></p>
+<img src='./5.png'>
+
+<p><strong>一般情况下，用<code>Ctrl+空格</code>就可以切换至搜狗输入法啦！</strong></p>
+<img src='./6.png'>
+
+<p><strong>参考链接：</strong><br><strong>【1】<a href="https://www.cnblogs.com/liuxingbusi/p/9277127.html" target="_blank" rel="noopener">kali2018安装搜狗输入法（原创）</a></strong></p>
+
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-04-27T15:38:46.000Z" itemprop="dateUpdated">2019-04-27 23:38:46</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kali/" rel="tag">Kali</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware-for-linux/" rel="tag">VMware for linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/" rel="tag">搜狗输入法</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/04/25/Linux%E5%AE%89%E8%A3%85VMware-Tools%E5%AE%9E%E7%8E%B0%E4%B8%8E%E7%89%A9%E7%90%86%E6%9C%BA%E4%BA%92%E9%80%9A/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Linux安装VMware Tools实现与物理机互通</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/15/%E6%88%91%E4%B9%B0%E4%BA%86%E5%85%AC%E5%AE%89%E9%83%A8-%E5%9C%A8%E7%BA%BF%E8%BF%99%E4%B8%AA%E5%9F%9F%E5%90%8D/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">我买了【公安部.在线】这个域名</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

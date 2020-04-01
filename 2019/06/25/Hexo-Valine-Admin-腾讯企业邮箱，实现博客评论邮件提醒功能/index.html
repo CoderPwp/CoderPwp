@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hexo+Valine-Admin+腾讯企业邮箱，实现博客评论邮件提醒功能 | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hexo,Valine评论系统,腾讯企业邮箱 - Valine-Admin插件,评论邮件提醒功能">
+    <meta name="description" content="热烈祝贺，在本博主的坚持不懈下，终于实现了评论邮件提醒功能。">
+<meta name="keywords" content="Hexo,Valine评论系统,腾讯企业邮箱 - Valine-Admin插件,评论邮件提醒功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Valine-Admin+腾讯企业邮箱，实现博客评论邮件提醒功能">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="热烈祝贺，在本博主的坚持不懈下，终于实现了评论邮件提醒功能。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Mail.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Valine.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Comment.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Valine01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Valine-Admin.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Notify.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Step1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Step2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Step3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;VA1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;VA2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;VA3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;VA4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;T_Mail.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Auth_pw.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Domain.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Comment2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Comment1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Functions.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Self-Wake.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Resen-Mails.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Reboot.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Success.png">
+<meta property="og:updated_time" content="2019-06-25T13:17:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;25&#x2F;Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD&#x2F;Mail.png">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo+Valine-Admin+腾讯企业邮箱，实现博客评论邮件提醒功能</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hexo+Valine-Admin+腾讯企业邮箱，实现博客评论邮件提醒功能</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-25T10:33:22.000Z" itemprop="datePublished" class="page-time">
+  2019-06-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Valine"><span class="post-toc-number">1.</span> <span class="post-toc-text">Valine</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍Valine-Admin"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">介绍Valine-Admin</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Hexo下的Valine"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置Hexo下的Valine</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LeanCloud-cn上使用Valine"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">LeanCloud.cn上使用Valine</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取APP-ID-和-APP-Key"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">获取APP ID 和 APP Key</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安全域名"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">安全域名</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始Valine-Admin"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">开始Valine-Admin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#部署部分"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">部署部分</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义环境变量-amp-腾讯企业邮箱"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">自定义环境变量 &amp; 腾讯企业邮箱</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进阶-评论管理后台"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">(进阶)评论管理后台</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#必看-定制休眠策略"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">(必看)定制休眠策略</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最后-重启实例"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">(最后)重启实例</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考文章"><span class="post-toc-number">2.</span> <span class="post-toc-text">参考文章</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hexo-Valine-Admin-腾讯企业邮箱，实现博客评论邮件提醒功能"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hexo+Valine-Admin+腾讯企业邮箱，实现博客评论邮件提醒功能</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-25 18:33:22" datetime="2019-06-25T10:33:22.000Z"  itemprop="datePublished">2019-06-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>热烈祝贺，在本博主的坚持不懈下，终于实现了评论邮件提醒功能。</strong><a id="more"></a></p>
+<img src='./Mail.png'/>
+
+<h1 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a>Valine</h1><p><strong>【1】先介绍一下Valine，<a href="https://valine.js.org/" target="_blank" rel="noopener">官网</a>。</strong></p>
+<img src='./Valine.png'/>
+
+<p><strong>【2】也就是本博客正在使用的评论系统，同时也欢迎各位小伙伴尝试~。</strong></p>
+<img src='./Comment.png'/>
+
+
+<p><strong>【2】<a href="https://valine.js.org/notify.html" target="_blank" rel="noopener">官方也有自带的邮件提醒功能</a>，但是有以下几点不足。</strong></p>
+<img src='./Valine01.png'/>
+
+<h2 id="介绍Valine-Admin"><a href="#介绍Valine-Admin" class="headerlink" title="介绍Valine-Admin"></a>介绍Valine-Admin</h2><p><strong>【1】所以，我们采用<a href="https://github.com/DesertsP/Valine-Admin" target="_blank" rel="noopener">Valine-Admin</a>，因为他基本解决了上面的所有问题。</strong></p>
+<img src='./Valine-Admin.png'/>
+
+<h2 id="配置Hexo下的Valine"><a href="#配置Hexo下的Valine" class="headerlink" title="配置Hexo下的Valine"></a>配置Hexo下的Valine</h2><p><strong>【2】因为我用的是Hexo的<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="noopener">Indigo</a>主题，该主题有自带Valine插件，所以我只需要配置文件即可，路径大概在<code>../Hexo/themes/indigo/config.yml</code></strong></p>
+<img src='./Notify.png'/>
+
+<h2 id="LeanCloud-cn上使用Valine"><a href="#LeanCloud-cn上使用Valine" class="headerlink" title="LeanCloud.cn上使用Valine"></a>LeanCloud.cn上使用Valine</h2><p><strong>【🔴】官网就有<a href="https://valine.js.org/quickstart.html" target="_blank" rel="noopener">具体的步骤</a>，为了方便我着重把需要的步骤抄过来。</strong></p>
+<h3 id="获取APP-ID-和-APP-Key"><a href="#获取APP-ID-和-APP-Key" class="headerlink" title="获取APP ID 和 APP Key"></a>获取APP ID 和 APP Key</h3><p><strong>【1】请先<a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">登录</a>或<a href="https://leancloud.cn/dashboard/login.html#/signup" target="_blank" rel="noopener">注册</a> LeanCloud, 进入<a href="https://leancloud.cn/dashboard/applist.html#/apps" target="_blank" rel="noopener">控制台</a>后点击左下角<a href="https://leancloud.cn/dashboard/applist.html#/newapp" target="_blank" rel="noopener">创建应用</a>：</strong></p>
+<img src='./Step1.png'/>
+
+<p><strong>【2】应用创建好以后，进入刚刚创建的应用，选择左下角的<code>设置</code>-&gt;<code>应用Key</code>，然后就能看到你的APP ID和APP Key了，并将其记下后填入适当的位置：</strong></p>
+<img src='./Step2.png'/>
+
+<h3 id="安全域名"><a href="#安全域名" class="headerlink" title="安全域名"></a>安全域名</h3><p><strong>【1】为了你的数据安全，请设置您的<code>安全域名</code>，像我的设置如下：</strong></p>
+<img src='./Step3.png'/>
+
+<h2 id="开始Valine-Admin"><a href="#开始Valine-Admin" class="headerlink" title="开始Valine-Admin"></a>开始Valine-Admin</h2><p><strong>【🔴】这部分在官方Github仓库上也有<a href="https://github.com/DesertsP/Valine-Admin#%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2" target="_blank" rel="noopener">具体步骤</a>，为了大家阅读方便我也给抄过来了：</strong></p>
+<h3 id="部署部分"><a href="#部署部分" class="headerlink" title="部署部分"></a>部署部分</h3><p><strong>【1】确保你的博客已经出现Valine的评论框，且可正常评论使用的情况下进行以下步骤，若不行请参考 <a href="https://valine.js.org/" target="_blank" rel="noopener">Valine Docs</a>。</strong></p>
+<p><strong>【2】然后进入 Leancloud 对应的 Valine 应用中。<code>云引擎</code> -&gt; <code>设置</code> 填写代码库并保存：<code>https://github.com/DesertsP/Valine-Admin</code>。</strong></p>
+<img src='./VA1.png'/>
+
+<p><strong>【3】切换到部署标签页，<code>云引擎</code> -&gt; <code>部署</code>，点击<code>Git源码部署</code>：</strong></p>
+<img src='./VA2.png'/>
+
+<p><strong>【4】分支或版本号：<code>Master</code>，勾选<code>下载最新依赖</code>，选择<code>生产环境</code></strong></p>
+<img src='./VA3.png'/>
+
+<p><strong>【5】第一次部署需要花点时间。</strong></p>
+<img src='./VA4.png'/>
+
+<h3 id="自定义环境变量-amp-腾讯企业邮箱"><a href="#自定义环境变量-amp-腾讯企业邮箱" class="headerlink" title="自定义环境变量 &amp; 腾讯企业邮箱"></a>自定义环境变量 &amp; 腾讯企业邮箱</h3><p><strong>【🔴】这里我用的是腾讯企业邮箱，因为可以自定义邮箱域名。你也可以使用普通的QQ邮箱，不过要注意<code>SMTP_HOST</code>里要改成相应的<code>SMTP服务器</code>。(详情参考：<a href="https://service.mail.qq.com/cgi-bin/help?subtype=1&no=167&id=28" target="_blank" rel="noopener">QQ邮箱的POP3与SMTP服务器是什么？</a>)</strong></p>
+<p><strong>【1】其中有一些<code>必填参数</code>：</strong></p>
+<blockquote>
+<ul>
+<li>SITE_NAME : 网站名称。</li>
+<li>SITE_URL : 网站地址, 最后不要加 / 。</li>
+<li>SMTP_USER : SMTP 服务用户名，一般为邮箱地址。</li>
+<li>SMTP_PASS : SMTP 密码，一般为授权码，而不是邮箱的登陆密码，请自行查询对应邮件服务商的获取方式</li>
+<li>SENDER_NAME : 发件人名称。</li>
+<li>SENDER_EMAIL ：发件邮箱</li>
+</ul>
+</blockquote>
+<img src='T_Mail.png'/>
+
+<p><strong>【2】同时要注意一点，邮箱密码<code>不是你的QQ密码</code>，而是使用<code>邮箱授权码</code>，这一点很重要！！！</strong><br><strong>(详情参考：<a href="https://service.mail.qq.com/cgi-bin/help?subtype=1&&no=1001256&&id=28" target="_blank" rel="noopener">什么是QQ邮箱授权码，它又是如何设置？</a>)</strong></p>
+<img src='./Auth_pw.png'/>
+
+<p><strong>【3】当您把邮箱授权码填入自定义环境变量，并确认一遍全部无误后<code>重启实例</code>，就已经实现<code>评论邮件提醒功能</code>啦！！！</strong></p>
+<h3 id="进阶-评论管理后台"><a href="#进阶-评论管理后台" class="headerlink" title="(进阶)评论管理后台"></a>(进阶)评论管理后台</h3><p><strong>【🔴】免费版的 LeanCloud 容器，是有强制性休眠策略的，不能 24 小时运行：</strong></p>
+<blockquote>
+<ul>
+<li>每天必须休眠 6 个小时</li>
+<li>30 分钟内没有外部请求，则休眠。</li>
+<li>休眠后如果有新的外部请求实例则马上启动（但激活时此次发送邮件会失败）。</li>
+<li>分析了一下上方的策略，如果不想付费的话，最佳使用方案就设置定时器，每天 7 - 23 点每 20 分钟访问一次，这样可以保持每天的绝大多数时间邮件服务是正常的。</li>
+</ul>
+</blockquote>
+<p><strong>【1】首先需要先配置下 Web 主机的域名，使用定时器时要用到，<code>云引擎</code>-&gt;<code>设置</code>-&gt;<code>Web 主机域名</code>：</strong></p>
+<img src='./Domain.png'/>
+
+<p><strong>【2】<code>存储</code>-&gt;<code>_User</code>-&gt;<code>添加行</code>，填写<code>email</code>、<code>password</code>、<code>username</code>，三个字段，用email登陆。(为了安全考虑，此 email 必须为配置中的 SMTP_USER 或 TO_EMAIL，<code>否则不允许登录</code>)</strong></p>
+<p><strong>接下来就可以从<code>xxx.leanapp.cn</code>，登录您的评论后台了。</strong></p>
+<img src='./Comment2.png'/>
+
+<p><strong>【3】效果图如下。</strong></p>
+<img src='./Comment1.png'/>
+
+<h3 id="必看-定制休眠策略"><a href="#必看-定制休眠策略" class="headerlink" title="(必看)定制休眠策略"></a>(必看)定制休眠策略</h3><p><strong>【🔴】为了顺利白嫖，所以我们选择了两个较佳的休眠策略。</strong><br><img src='./Functions.png'/></p>
+<p><strong>【1】选择<code>self-wake</code>云函数，Cron表达式为<code>0 0/30 6-23 * * ?</code>，表示每天早6点到晚23点每隔30分钟访问云引擎。</strong></p>
+<img src='./Self-Wake.png'/>
+
+<p><strong>【2】选择<code>resend-mails</code>云函数，Cron表达式为<code>0 0 8 * * ?</code>，表示每天早8点检查过去24小时内漏发的通知邮件并补发。</strong></p>
+<img src='./Resen-Mails.png'/>
+
+<h3 id="最后-重启实例"><a href="#最后-重启实例" class="headerlink" title="(最后)重启实例"></a>(最后)重启实例</h3><p><strong>【1】一切都搞定后，请务必重启一次实例。</strong></p>
+<img src='./Reboot.png'/>
+
+<p><strong>【2】测试评论一下，然后到<code>云引擎</code>-&gt;<code>应用日志</code>查看，以下情况则说明功能已经实现啦~！！！</strong></p>
+<img src='./Success.png'/>
+
+<p><strong>【3】效果</strong></p>
+<p><video src='./Test.mp4' controls='ture'></video></p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><em>老规矩，列出本文所引用及参考的文章链接。</em></p>
+<p><strong>【1】<a href="https://valine.js.org/" target="_blank" rel="noopener">Valine，一款快速、简洁且高效的无后端评论系统。</a></strong><br><strong>【2】<a href="https://github.com/DesertsP/Valine-Admin" target="_blank" rel="noopener">DesertsP，Valine-Admin</a></strong><br><strong>【3】<a href="https://service.mail.qq.com/cgi-bin/help?subtype=1&no=167&id=28" target="_blank" rel="noopener">QQ邮箱，POP3与SMTP服务器地址？</a></strong><br><strong>【4】<a href="https://service.mail.qq.com/cgi-bin/help?subtype=1&&no=1001256&&id=28" target="_blank" rel="noopener">QQ邮箱，什么是授权码，它又是如何设置？</a></strong><br><strong>【5】<a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud，领先的 BaaS 提供商</a></strong></p>
+
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-06-25T13:17:18.000Z" itemprop="dateUpdated">2019-06-25 21:17:18</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" rel="tag">Valine评论系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1-Valine-Admin%E6%8F%92%E4%BB%B6/" rel="tag">腾讯企业邮箱 - Valine-Admin插件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD/" rel="tag">评论邮件提醒功能</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/12/Pwp-ink%E7%BD%91%E5%9D%80%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%84/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Pwp.ink网址性能测评</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/23/%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">翻墙节点加速之BBR PLUS+BBR魔改+LotServer(锐速)一键脚本</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

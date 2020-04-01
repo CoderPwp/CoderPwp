@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>翻墙节点加速之BBR PLUS+BBR魔改+LotServer(锐速)一键脚本 | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="BBR加速,BBR PLUS,BBR魔改,LotServer(锐速),一键脚本">
+    <meta name="description" content="本文转载自前辈的博客，做备份记录使用。">
+<meta name="keywords" content="BBR加速,BBR PLUS,BBR魔改,LotServer(锐速),一键脚本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="翻墙节点加速之BBR PLUS+BBR魔改+LotServer(锐速)一键脚本">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="本文转载自前辈的博客，做备份记录使用。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;1.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;2.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;3.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;4.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;5.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;7.png">
+<meta property="og:updated_time" content="2019-11-14T00:12:46.768Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;06&#x2F;23&#x2F;%E7%BF%BB%E5%A2%99%E8%8A%82%E7%82%B9%E5%8A%A0%E9%80%9F%E4%B9%8BBBR-PLUS-BBR%E9%AD%94%E6%94%B9-LotServer-%E9%94%90%E9%80%9F%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC&#x2F;1.gif">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">翻墙节点加速之BBR PLUS+BBR魔改+LotServer(锐速)一键脚本</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">翻墙节点加速之BBR PLUS+BBR魔改+LotServer(锐速)一键脚本</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-23T08:44:20.000Z" itemprop="datePublished" class="page-time">
+  2019-06-23
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内容介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">内容介绍</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测速比较"><span class="post-toc-number">2.</span> <span class="post-toc-text">测速比较</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#【1】裸连"><span class="post-toc-number">3.</span> <span class="post-toc-text">【1】裸连</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#【2】锐速"><span class="post-toc-number">4.</span> <span class="post-toc-text">【2】锐速</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#【3】BBR原生"><span class="post-toc-number">5.</span> <span class="post-toc-text">【3】BBR原生</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#【4】BBR魔改"><span class="post-toc-number">6.</span> <span class="post-toc-text">【4】BBR魔改</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#【5】BBR暴力魔改"><span class="post-toc-number">7.</span> <span class="post-toc-text">【5】BBR暴力魔改</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#教程更新"><span class="post-toc-number">8.</span> <span class="post-toc-text">教程更新</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#脚本安装"><span class="post-toc-number">9.</span> <span class="post-toc-text">脚本安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考文章"><span class="post-toc-number">10.</span> <span class="post-toc-text">参考文章</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-翻墙节点加速之BBR-PLUS-BBR魔改-LotServer-锐速一键脚本"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">翻墙节点加速之BBR PLUS+BBR魔改+LotServer(锐速)一键脚本</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-23 16:44:20" datetime="2019-06-23T08:44:20.000Z"  itemprop="datePublished">2019-06-23</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>本文转载自前辈的博客，做备份记录使用。<a id="more"></a></strong></p>
+<h1 id="内容介绍"><a href="#内容介绍" class="headerlink" title="内容介绍"></a>内容介绍</h1><p><strong>根据前辈的建议，从速度和兼容性的两方面上考虑，推荐首选BBR PLUS。亲测效果：德国节点提速200%，但并非所有线路都适用。</strong></p>
+<h1 id="测速比较"><a href="#测速比较" class="headerlink" title="测速比较"></a>测速比较</h1><h1 id="【1】裸连"><a href="#【1】裸连" class="headerlink" title="【1】裸连"></a>【1】裸连</h1><img src='1.gif'>
+
+<h1 id="【2】锐速"><a href="#【2】锐速" class="headerlink" title="【2】锐速"></a>【2】锐速</h1><img src='2.gif'>
+
+<h1 id="【3】BBR原生"><a href="#【3】BBR原生" class="headerlink" title="【3】BBR原生"></a>【3】BBR原生</h1><img src='3.gif'>
+
+<h1 id="【4】BBR魔改"><a href="#【4】BBR魔改" class="headerlink" title="【4】BBR魔改"></a>【4】BBR魔改</h1><img src='4.gif'>
+
+<h1 id="【5】BBR暴力魔改"><a href="#【5】BBR暴力魔改" class="headerlink" title="【5】BBR暴力魔改"></a>【5】BBR暴力魔改</h1><img src='5.gif'>
+
+<h1 id="教程更新"><a href="#教程更新" class="headerlink" title="教程更新"></a>教程更新</h1><p><strong>【2018年12月24日】</strong><br><em>脚本新增BBRplus修正版，解决原版bbr在高丢包率下易失速以及bbr收敛慢的问题。尝试使其更好，减少排队和丢包。</em></p>
+<p><strong>【2018年3月8日】</strong><br><em>脚本新增南琴浪的暴力魔改BBR，使速度更加暴力，实际效果因线路而定。</em></p>
+<h1 id="脚本安装"><a href="#脚本安装" class="headerlink" title="脚本安装"></a>脚本安装</h1><p><strong>支持系统：<code>CentOS 6+</code>、<code>Debian 8+</code>、<code>Ubuntu 14+</code>。</strong></p>
+<p><strong>【1】注意：该脚本在Vultr各个系统均测试通过，如果期间有出现任何问题，可向原作者反映帮助改善。<br>运行以下命令：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</span><br></pre></td></tr></table></figure>
+
+<p><strong>【2】Ubuntu 18.04魔改BBR暂时有点问题，可使用以下命令安装：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&quot;</span><br><span class="line">apt install make gcc -y</span><br><span class="line">sed -i &apos;s#/usr/bin/gcc-4.9#/usr/bin/gcc#g&apos; &apos;/root/tcp.sh&apos;</span><br><span class="line">chmod +x tcp.sh &amp;&amp; ./tcp.sh</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用脚本后会出现如下选项，推荐顺序：9-2-7</strong><br><img src='./5.png'/></p>
+<p><strong>根据自己需求操作，重启后再使以下命令接着操作。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh ./tcp.sh</span><br></pre></td></tr></table></figure>
+<p><strong>如果出现类似情况，提示删除内核，请选择<code>NO</code>，然后根据提示重启。</strong><br><img src='7.png'/></p>
+<p><strong>最后由于本脚本集成加速太多，兼容性可能不是很好，对于部分系统BBR安装不成功的，可以参考博客其它脚本。</strong></p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><strong>[1] <a href="https://www.frank2019.info/249.html" target="_blank" rel="noopener">FRANK笔记，BBR+BBR魔改+LOTSEVER(锐速)一键脚本 FOR CENTOS/DEBIAN/UBUNTU。</a></strong><br><strong>[2] <a href="https://www.kxxzz.com/mgvps/76310.html" target="_blank" rel="noopener">开心小站长，裸连/BBR原生/锐速/BBR魔改/BBR暴力魔改，节点测速比较。</a></strong><br><strong>[3] <a href="https://www.moerats.com/archives/523/" target="_blank" rel="noopener">Rat’s Blog，超级暴力版魔改BBR一键脚本 for Debian。</a></strong><br><strong>[4] <a href="https://www.moerats.com/archives/504/" target="_blank" rel="noopener">Rat’s Blog，OpenVZ平台魔改BBR一键脚本之Rinetd方式。</a></strong><br><strong>[5] <a href="https://www.moerats.com/archives/382/" target="_blank" rel="noopener">Rat’s Blog，魔改BBR一键安装脚本 for Debian/CentOS。</a></strong></p>
+
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-14T00:12:46.768Z" itemprop="dateUpdated">2019-11-14 08:12:46</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BBR-PLUS/" rel="tag">BBR PLUS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BBR%E5%8A%A0%E9%80%9F/" rel="tag">BBR加速</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BBR%E9%AD%94%E6%94%B9/" rel="tag">BBR魔改</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LotServer-%E9%94%90%E9%80%9F/" rel="tag">LotServer(锐速)</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/" rel="tag">一键脚本</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/06/25/Hexo-Valine-Admin-%E8%85%BE%E8%AE%AF%E4%BC%81%E4%B8%9A%E9%82%AE%E7%AE%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hexo+Valine-Admin+腾讯企业邮箱，实现博客评论邮件提醒功能</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/23/PC%E7%AB%AF%E6%AD%A3%E5%B8%B8%E8%BF%9E%E6%8E%A5SS%EF%BC%8C%E4%BD%86%E7%A7%BB%E5%8A%A8%E7%AB%AFOutline%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">PC端正常连接SS，但移动端Outline连接失败</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

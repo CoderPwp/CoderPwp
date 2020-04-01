@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Ubuntu 安装宝塔出错 Pillow installation failed | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Ubuntu 18.04.1 LTS,Pillow installation failed,宝塔面板安装">
+    <meta name="description" content="本期分享安装宝塔面板过程中的一些常见报错和解决办法。">
+<meta name="keywords" content="Ubuntu 18.04.1 LTS,Pillow installation failed,宝塔面板安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 安装宝塔出错 Pillow installation failed">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="本期分享安装宝塔面板过程中的一些常见报错和解决办法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;Show_Details.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;AliOPSX.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;Hint_Broken.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;Edit_SourcesList.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;Successful_Installation.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;Install_Bt.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;Succeessful_Install_Bt.png">
+<meta property="og:updated_time" content="2019-11-14T00:22:57.324Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;02&#x2F;15&#x2F;Ubuntu-%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%87%BA%E9%94%99-Pillow-installation-failed&#x2F;Show_Details.png">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ubuntu 安装宝塔出错 Pillow installation failed</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ubuntu 安装宝塔出错 Pillow installation failed</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-15T07:56:13.000Z" itemprop="datePublished" class="page-time">
+  2019-02-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#报错细节"><span class="post-toc-number">1.</span> <span class="post-toc-text">报错细节</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更换Ubuntu源"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">更换Ubuntu源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编辑sources-list"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">编辑sources.list</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新源列表"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">更新源列表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装python-setuptools"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">安装python-setuptools</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#再次安装宝塔面板"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">再次安装宝塔面板</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">个人总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#有话要说"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">有话要说</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考文章"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">参考文章</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Ubuntu-安装宝塔出错-Pillow-installation-failed"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ubuntu 安装宝塔出错 Pillow installation failed</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-02-15 15:56:13" datetime="2019-02-15T07:56:13.000Z"  itemprop="datePublished">2019-02-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>本期分享安装宝塔面板过程中的一些常见报错和解决办法。</strong><a id="more"></a></p>
+<h1 id="报错细节"><a href="#报错细节" class="headerlink" title="报错细节"></a>报错细节</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pillow installation failed</span><br></pre></td></tr></table></figure>
+<img src='./Show_Details.png'>
+
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="更换Ubuntu源"><a href="#更换Ubuntu源" class="headerlink" title="更换Ubuntu源"></a>更换Ubuntu源</h2><img src='./AliOPSX.png'>
+
+<p>这里强烈建议采用<strong><a href="https://opsx.alibaba.com/guide?lang=zh-CN&document=69a2341e-801e-11e8-8b5a-00163e04cdbb" target="_blank" rel="noopener">阿里更新源列表</a></strong>进行更新安装, 否则当你安装下面的相关依赖库时, 可能会提示你安装包损坏(我之前用的是清华更新源)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E: Unable to correct problems, you have held broken packages.</span><br></pre></td></tr></table></figure>
+<img src='./Hint_Broken.png'>
+
+<h2 id="编辑sources-list"><a href="#编辑sources-list" class="headerlink" title="编辑sources.list"></a>编辑sources.list</h2><img src='Edit_SourcesList.png'>
+
+<p>把一下更新源地址编辑保存到<code>/etc/apt/sources.list</code>, <code>deb-src</code>是安装包源代码, 不需要自行编译的话可以删除掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新源列表"><a href="#更新源列表" class="headerlink" title="更新源列表"></a>更新源列表</h2><p>编辑保存<code>sources.list</code>后一定要执行一遍下面指令, 否则你直接安装下面的相关依赖库一样是会报错的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<p>当然你也可以选择顺带更新你的软件, 不要去掉<code>dist</code>否则会覆盖掉你之前的配置, 切记!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get dist-upgrade</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装python-setuptools"><a href="#安装python-setuptools" class="headerlink" title="安装python-setuptools"></a>安装python-setuptools</h2><img src='./Successful_Installation.png'>
+
+<p>先安装相关依赖库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-setuptools</span><br></pre></td></tr></table></figure>
+<h2 id="再次安装宝塔面板"><a href="#再次安装宝塔面板" class="headerlink" title="再次安装宝塔面板"></a>再次安装宝塔面板</h2><img src='./Install_Bt.png'>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+<img src='./Succeessful_Install_Bt.png'>
+
+<p><strong>最后我们耐心等待个10分钟就成功安装好宝塔面板啦~!</strong></p>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><h2 id="有话要说"><a href="#有话要说" class="headerlink" title="有话要说"></a>有话要说</h2><p><strong>各位小伙伴们好久不见哇，跨入新的一年，2019小P在这给大家先拜年啦<del>！不知道是不是小P长大了，感觉年味一年不比一年了，连这个寒假我都在不停的肝新东西，所以呢有好多东西想和大家分享</del>原谅我托更了很久hhh，期待我的新博文吧~！</strong></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><strong><a href="http://www.bt.cn/bbs/forum.php?mod=viewthread&tid=9926" target="_blank" rel="noopener">[1] Pillow installation failed - 宝塔官网</a></strong><br><strong><a href="https://www.bt.cn/bbs/thread-19376-1-1.html" target="_blank" rel="noopener">[2] 宝塔Linux面板安装教程</a></strong><br><strong><a href="https://opsx.alibaba.com/guide?lang=zh-CN&document=69a2341e-801e-11e8-8b5a-00163e04cdbb" target="_blank" rel="noopener">[3] Ubuntu阿里源配置</a></strong></p>
+
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-14T00:22:57.324Z" itemprop="dateUpdated">2019-11-14 08:22:57</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pillow-installation-failed/" rel="tag">Pillow installation failed</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-18-04-1-LTS/" rel="tag">Ubuntu 18.04.1 LTS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85/" rel="tag">宝塔面板安装</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/03/08/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%83%A8%E7%BD%B2%E9%A6%99%E6%B8%AF%E8%8A%82%E7%82%B9%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%9A%84%E8%BF%87%E7%A8%8B%E3%80%901%E3%80%91/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">记一次部署香港节点实现科学上网的过程【1】</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/12/18/%E3%80%90WindowsXP%E6%BC%8F%E6%B4%9E%E3%80%91MS08-067%E5%88%A9%E7%94%A8%E8%BF%87%E7%A8%8B%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">【WindowsXP漏洞】MS08-067利用过程及常见问题解决</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

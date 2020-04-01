@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>【转载】C/C++如何整行读入字符串？ | CoderPwp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="转载,读入字符串,C语言">
+    <meta name="description" content="在写代码的过程中，经常要一行一行的读入字符串进行处理，这里我总结了一些方法，供大家参考。">
+<meta name="keywords" content="转载,读入字符串,C语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转载】C&#x2F;C++如何整行读入字符串？">
+<meta property="og:url" content="https:&#x2F;&#x2F;pwp.ink&#x2F;2019&#x2F;11&#x2F;16&#x2F;%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91C-C-%E5%A6%82%E4%BD%95%E6%95%B4%E8%A1%8C%E8%AF%BB%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%9F&#x2F;index.html">
+<meta property="og:site_name" content="CoderPwp">
+<meta property="og:description" content="在写代码的过程中，经常要一行一行的读入字符串进行处理，这里我总结了一些方法，供大家参考。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-16T12:01:35.083Z">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CoderPwp</h5>
+          <a href="mailto:coder.pwp@qq.com" target="_blank" rel="noopener" title="coder.pwp@qq.com" class="mail">coder.pwp@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://pwp.leanapp.cn/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-icon icon-id-card"></i>
+                后台
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-icon icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">【转载】C/C++如何整行读入字符串？</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a target="" href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">【转载】C/C++如何整行读入字符串？</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-16T11:54:07.000Z" itemprop="datePublished" class="page-time">
+  2019-11-16
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法一：scanf-读入char"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法一：scanf()读入char[]</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法二：getchar-读入char"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法二：getchar()读入char[]</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法三：gets-读入char"><span class="post-toc-number">3.</span> <span class="post-toc-text">方法三：gets()读入char[]</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法四：getline-读入string或char"><span class="post-toc-number">4.</span> <span class="post-toc-text">方法四：getline()读入string或char[]</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法五：get-读入char"><span class="post-toc-number">5.</span> <span class="post-toc-text">方法五：get()读入char[]</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#声明"><span class="post-toc-number">6.</span> <span class="post-toc-text">声明</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-【转载】C-C-如何整行读入字符串？"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">【转载】C/C++如何整行读入字符串？</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-16 19:54:07" datetime="2019-11-16T11:54:07.000Z"  itemprop="datePublished">2019-11-16</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>在写代码的过程中，经常要一行一行的读入字符串进行处理，这里我总结了一些方法，供大家参考。</strong><a id="more"></a></p>
+<h1 id="方法一：scanf-读入char"><a href="#方法一：scanf-读入char" class="headerlink" title="方法一：scanf()读入char[]"></a>方法一：scanf()读入char[]</h1><p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">char str[1024];</span><br><span class="line">scanf(&quot;%[^\n]&quot;,&amp;str);</span><br><span class="line">getchar();</span><br></pre></td></tr></table></figure>
+<p><strong>说明：在scanf函数中，可以使用%c来读取一个字符，使用%s读取一个字符串, 但是读取字符串时不忽略空格，读字符串时忽略开始的空格，并且读到空格为止，因此只能读取一个单词，而不是整行字符串。</strong></p>
+<p>　　其实scanf函数也可完成这样的功能，而且还更强大。这里主要介绍一个参数，％[　]，这个参数的意义是读入一个字符集合。[　]是个集合的标志，因此%[　]特指读入此集合所限定的那些字符,比如%[A-Z]是输入大写字母，一旦遇到不在此集合的字符便停止。如果集合的第一个字符是”^”，这说明读取不在”^”后面集合的字符，既遇到”^”后面集合的字符便停止。注意此时读入的字符串是可以含有空格的，而且会把开头的空格也读进来。</p>
+<p>　　注意：如果要循环的多次从屏幕上读取一行的话，就要在读取一行后，在用%c读取一个字符，将输入缓冲区中的换行符给读出来。否则的话，在下一次读取一行的时候，第一个就遇到’\n’，匹配不成功就直接返回了。这里可以用scanf()或者getchar()函数读取换行符。</p>
+<h1 id="方法二：getchar-读入char"><a href="#方法二：getchar-读入char" class="headerlink" title="方法二：getchar()读入char[]"></a>方法二：getchar()读入char[]</h1><p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">char str[1024];</span><br><span class="line">int i=0;</span><br><span class="line">while((str[i]=getchar())!=&apos;\n&apos;)</span><br><span class="line">    i++;</span><br><span class="line">getchar();</span><br></pre></td></tr></table></figure>
+<p><strong>说明：这样一个一个读也可以，也会把开头的空格读进来。最后也需要考虑换行符，使用getchar()读出来。</strong></p>
+<h1 id="方法三：gets-读入char"><a href="#方法三：gets-读入char" class="headerlink" title="方法三：gets()读入char[]"></a>方法三：gets()读入char[]</h1><p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char str[1024];</span><br><span class="line">gets(str);</span><br></pre></td></tr></table></figure>
+<p><strong>说明：感觉这个就是多个getchar的集合函数，很好用。功能是从标准输入键盘上读入一个完整的行（从标准输入读，一直读到遇到换行符），把读到的内容存入括号中指定的字符数组里，并用空字符’\0’取代行尾的换行符’\n’。读入时不需要考虑换行符。</strong></p>
+<h1 id="方法四：getline-读入string或char"><a href="#方法四：getline-读入string或char" class="headerlink" title="方法四：getline()读入string或char[]"></a>方法四：getline()读入string或char[]</h1><p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string str;</span><br><span class="line">getline(cin,str);//读入string</span><br><span class="line"></span><br><span class="line">char str2[1024];</span><br><span class="line">cin.getline(str2,1024);//读入char数组</span><br></pre></td></tr></table></figure>
+<p><strong>说明：这是比较常用的方法，cin.getline第三个参数表示间隔符，默认为换行符’\n’。读入不需要考虑最后的换行符。</strong></p>
+<h1 id="方法五：get-读入char"><a href="#方法五：get-读入char" class="headerlink" title="方法五：get()读入char[]"></a>方法五：get()读入char[]</h1><p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char str3[1024];</span><br><span class="line">cin.get(str3,1024);//读入char数组</span><br></pre></td></tr></table></figure>
+<p><strong>说明：get函数读入时需要考虑最后的换行符，也就是说，如果用get读入多行数据，要把’\n’另外读出来，一般使用cin.get(str,1024).get();来读入多组数据。</strong></p>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p><strong>作者： AlvinZH</strong></p>
+<p><strong>出处： <a href="http://www.cnblogs.com/AlvinZH/" target="_blank" rel="noopener">http://www.cnblogs.com/AlvinZH/</a></strong></p>
+<p><strong>作者Github：<a href="https://github.com/Pacsiy/JobDu" target="_blank" rel="noopener">https://github.com/Pacsiy/JobDu</a></strong></p>
+<p><strong>本文版权归作者AlvinZH和博客园所有，欢迎转载和商用，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利.</strong></p>
+
+        </div>
+        
+    <div class="page-reward">
+        <a target="" id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">☕</a>
+    </div>
+    
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-16T12:01:35.083Z" itemprop="dateUpdated">2019-11-16 20:01:35</time>
+</span><br>
+
+
+        
+        鉴于本博主的水平不足，文章难免有出错，还请不吝赐教(真诚脸)!!!
+        
+    </div>
+    
+    <footer>
+        <a href="https://pwp.ink">
+            <img src="/img/avatar.jpg" alt="CoderPwp">
+            CoderPwp
+        </a>
+    </footer>
+</blockquote>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">读入字符串</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag">转载</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/23/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%AE%BA%E8%80%83%E5%8D%B7/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">数据科学与大数据技术导论考卷</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/12/%E3%80%8A%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B-%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E3%80%8B%E7%AC%AC2%E7%AB%A0-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">《算法竞赛 入门经典》 第2章 循环结构程序设计</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <style type="text/css">
+        div.info{
+            display: none;
+        }
+    </style>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "w4BhxOuXt8ADWS5hgPOPsaTy-gzGzoHsz",
+            appKey: "6EceGdAYhExFouov9a0z1066",
+            avatar: "identicon",
+            placeholder: "博客已启用邮件通知功能，您的宝贵评论我都会准时收到喔~",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "7"
+        });
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a target="" class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        知识无价，请我喝杯咖啡吧~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>
+<footer class="footer">
+        <div class="bottom">
+            <p><span>CoderPwp &copy; 2018 - 2020</span>
+                <span>
+                    
+                    <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备19008784号-3</a><br>
+                    
+                    Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">Indigo</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    </b>
+    </main>
+    <div class="mask" id="mask"></div>
+<a target="" href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a target="" href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)悄悄藏起来啦!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '( •̀ ω •́ )被发现惹~';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
